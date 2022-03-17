@@ -1,76 +1,81 @@
-import React from 'react';
-import {
-  numberValue,
-  add,
-  minus,
-  times,
-  divide,
-  equal,
-  clear,
-} from './buttonFunctions';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [value, setValue] = useState('0');
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setValue(e.target.name);
+  };
+
+  // export const add = () => {};
+  // export const minus = () => {};
+  // export const times = () => {};
+  // export const divide = () => {};
+  // export const equal = () => {};
+  // export const clear = () => {};
+
   return (
     <div className="App">
       <header className="App-header">
         <div className="calculator-box">
           <h1>Calculator</h1>
-          <div className="result-area"></div>
+          <div className="result-area">{value}</div>
           <div className="button-area">
             <div className="first-top-num-row">
-              <button name="7" onClick={numberValue}>
+              <button name="7" onClick={handleClick}>
                 7
               </button>
-              <button name="8" onClick={numberValue}>
+              <button name="8" onClick={handleClick}>
                 8
               </button>
-              <button name="9" onClick={numberValue}>
+              <button name="9" onClick={handleClick}>
                 9
               </button>
-              <button name="clear" onClick={numberValue}>
+              <button name="clear" onClick={handleClick}>
                 AC
               </button>
             </div>
             <div className="second-top-num-row">
-              <button name="4" onClick={numberValue}>
+              <button name="4" onClick={handleClick}>
                 4
               </button>
-              <button name="5" onClick={numberValue}>
+              <button name="5" onClick={handleClick}>
                 5
               </button>
-              <button name="6" onClick={numberValue}>
+              <button name="6" onClick={handleClick}>
                 6
               </button>
-              <button name="/" onClick={numberValue}>
+              <button name="/" onClick={handleClick}>
                 /
               </button>
             </div>
             <div className="third-top-num-row">
-              <button name="1" onClick={numberValue}>
+              <button name="1" onClick={handleClick}>
                 1
               </button>
-              <button name="2" onClick={numberValue}>
+              <button name="2" onClick={handleClick}>
                 2
               </button>
-              <button name="3" onClick={numberValue}>
+              <button name="3" onClick={handleClick}>
                 3
               </button>
-              <button name="*" onClick={numberValue}>
+              <button name="*" onClick={handleClick}>
                 x
               </button>
             </div>
             <div className="fourth-top-num-row">
-              <button name="0" onClick={numberValue}>
+              <button name="0" onClick={handleClick}>
                 0
               </button>
-              <button name="-" onClick={numberValue}>
+              <button name="-" onClick={handleClick}>
                 -
               </button>
-              <button name="+" onClick={numberValue}>
+              <button name="+" onClick={handleClick}>
                 +
               </button>
-              <button name="===" onClick={numberValue}>
+              <button name="===" onClick={handleClick}>
                 =
               </button>
             </div>
